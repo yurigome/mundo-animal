@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Check, MessageCircle } from "lucide-react";
+import { Bone, Check, MessageCircle, PawPrint } from "lucide-react";
 import { CATEGORIES, getCategory, SITE } from "@/lib/site";
 import { CategoryCircle } from "@/components/CategoryIcon";
 
@@ -32,13 +32,35 @@ function CategoryPage() {
   const c = getCategory(slug)!;
   return (
     <>
-      <section className="bg-hero-split">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-12 text-primary-foreground md:flex-row">
-          <CategoryCircle c={c} />
-          <div>
-            <h1 className="text-4xl font-extrabold md:text-5xl">{c.name}</h1>
-            <p className="mt-2 max-w-xl text-lg opacity-90">{c.tagline}</p>
+      <section className="relative overflow-hidden bg-hero-split">
+        <PawPrint className="float-slow absolute right-10 top-8 h-10 w-10 text-primary/25" />
+        <Bone className="float-slow absolute bottom-6 left-1/2 h-8 w-8 text-primary-foreground/30" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 text-primary-foreground md:grid-cols-[minmax(0,1fr)_auto] md:py-16">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
+            {c.image ? (
+              <span className="md:hidden">
+                <CategoryCircle c={c} />
+              </span>
+            ) : (
+              <CategoryCircle c={c} />
+            )}
+            <div className="min-w-0">
+              <h1 className="text-4xl font-extrabold md:text-5xl">{c.name}</h1>
+              <p className="mt-2 max-w-xl text-lg opacity-90">{c.tagline}</p>
+              <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-card px-6 py-2.5 text-sm font-bold text-primary shadow-lg transition hover:-translate-y-0.5">
+                <MessageCircle className="h-4 w-4" /> Pedir pelo WhatsApp
+              </a>
+            </div>
           </div>
+          {c.image && (
+            <img
+              src={c.image}
+              alt={c.name}
+              width={1024}
+              height={1024}
+              className="animate-in fade-in zoom-in-95 duration-700 mx-auto hidden w-full max-w-sm rotate-2 rounded-3xl border-4 border-card object-cover shadow-2xl md:block"
+            />
+          )}
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-4 py-12">

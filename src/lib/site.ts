@@ -2,6 +2,8 @@ import dog from "@/assets/cat-dog.jpg";
 import cat from "@/assets/cat-cat.jpg";
 import bird from "@/assets/cat-bird.jpg";
 import rabbit from "@/assets/cat-rabbit.jpg";
+import medicamentos from "@/assets/cat-medicamentos.jpg";
+import acessorios from "@/assets/cat-acessorios.jpg";
 
 export const SITE = {
   name: "Mundo Animal",
@@ -56,12 +58,14 @@ export const CATEGORIES: Category[] = [
   {
     slug: "medicamentos",
     name: "Medicamentos",
+    image: medicamentos,
     tagline: "Medicamentos veterinários e cuidados com a saúde.",
     items: ["Antipulgas e carrapaticidas", "Vermífugos", "Vitaminas e suplementos", "Shampoos dermatológicos", "Curativos", "Medicamentos sob orientação"],
   },
   {
     slug: "acessorios",
     name: "Acessórios",
+    image: acessorios,
     tagline: "Comedouros, bebedouros, gaiolas e muito mais.",
     items: ["Comedouros e bebedouros", "Gaiolas", "Caixas de transporte", "Roupinhas", "Coleiras", "Itens de passeio"],
   },

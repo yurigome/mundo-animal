@@ -2,6 +2,8 @@ import dog from "@/assets/cat-dog.jpg";
 import cat from "@/assets/cat-cat.jpg";
 import bird from "@/assets/cat-bird.jpg";
 import rabbit from "@/assets/cat-rabbit.jpg";
+import medicamentos from "@/assets/cat-medicamentos.jpg";
+import acessorios from "@/assets/cat-acessorios.jpg";
 
 export const SITE = {
   name: "Mundo Animal",

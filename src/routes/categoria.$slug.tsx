@@ -37,7 +37,13 @@ function CategoryPage() {
         <Bone className="float-slow absolute bottom-6 left-1/2 h-8 w-8 text-primary-foreground/30" />
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 text-primary-foreground md:grid-cols-[minmax(0,1fr)_auto] md:py-16">
           <div className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
-            <CategoryCircle c={c} />
+            {c.image ? (
+              <span className="md:hidden">
+                <CategoryCircle c={c} />
+              </span>
+            ) : (
+              <CategoryCircle c={c} />
+            )}
             <div className="min-w-0">
               <h1 className="text-4xl font-extrabold md:text-5xl">{c.name}</h1>
               <p className="mt-2 max-w-xl text-lg opacity-90">{c.tagline}</p>

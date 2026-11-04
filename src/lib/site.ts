@@ -58,12 +58,14 @@ export const CATEGORIES: Category[] = [
   {
     slug: "medicamentos",
     name: "Medicamentos",
+    image: medicamentos,
     tagline: "Medicamentos veterinários e cuidados com a saúde.",
     items: ["Antipulgas e carrapaticidas", "Vermífugos", "Vitaminas e suplementos", "Shampoos dermatológicos", "Curativos", "Medicamentos sob orientação"],
   },
   {
     slug: "acessorios",
     name: "Acessórios",
+    image: acessorios,
     tagline: "Comedouros, bebedouros, gaiolas e muito mais.",
     items: ["Comedouros e bebedouros", "Gaiolas", "Caixas de transporte", "Roupinhas", "Coleiras", "Itens de passeio"],
   },
